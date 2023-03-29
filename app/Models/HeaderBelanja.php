@@ -19,7 +19,7 @@ class HeaderBelanja extends Model
 
     public function items()
     {
-        return $this->belongsToMany(Item::class, 'detail_belanjas');
+        return $this->belongsToMany(Item::class, 'detail_belanjas', 'id_belanja', 'id_item')->withPivot(['quantity', 'jumlah']);
     }
 
     public function karyawan()

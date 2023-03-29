@@ -14,6 +14,6 @@ class DetailBelanja extends Model
      * @var array
      */
     protected $fillable = [
-        'item', 'quantity', 'jumlah'
+        'item', 'quantity', 'jumlah', 'id_belanja', 'id_item'
     ];
 }

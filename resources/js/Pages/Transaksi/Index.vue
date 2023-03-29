@@ -33,10 +33,10 @@
                             <td class="text-center">
                                 <Link :href="`/transactions/${transaction.id}`" class="btn btn-sm btn-primary me-2">DETAIL
                                 </Link>
-                                <Link :href="`/transactions/${transaction.id}/edit`" class="btn btn-warning btn-sm"
+                                <!-- <Link :href="`/transactions/${transaction.id}/edit`" class="btn btn-warning btn-sm"
                                     style="margin-right: 5px;">
                                 EDIT
-                                </Link>
+                                </Link> -->
                                 <button @click.prevent="deleteTransaction(`${transaction.id}`)"
                                     class="btn btn-sm btn-danger">DELETE</button>
                             </td>

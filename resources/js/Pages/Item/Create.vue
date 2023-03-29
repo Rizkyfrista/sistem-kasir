@@ -14,7 +14,8 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Harga Item</label>
-                        <input type="text" class="form-control" v-model="item.harga_item" placeholder="Masukkan Harga Item">
+                        <input type="number" class="form-control" v-model="item.harga_item"
+                            placeholder="Masukkan Harga Item">
                         <div v-if="errors.title" class="mt-2 alert alert-danger">
                             {{ errors.title }}
                         </div>

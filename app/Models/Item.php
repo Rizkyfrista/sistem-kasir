@@ -19,6 +19,6 @@ class Item extends Model
 
     public function belanjas()
     {
-        return $this->belongsToMany(HeaderBelanja::class, 'detail_belanjas');
+        return $this->belongsToMany(HeaderBelanja::class, 'detail_belanjas', 'id_belanja');
     }
 }

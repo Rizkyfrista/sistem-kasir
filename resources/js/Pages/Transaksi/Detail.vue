@@ -15,18 +15,25 @@
                         <tr>
                             <th scope="col">Item</th>
                             <th scope="col">Quantity</th>
+                            <th scope="col">Satuan</th>
                             <th scope="col">Jumlah</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="detail in details" :key="detail.id">
-                            <td>{{ detail.item }}</td>
-                            <td>{{ detail.quantity }}</td>
-                            <td>{{ detail.jumlah }}</td>
-                            <td class="text-center">
-                            </td>
+                            <td>{{ detail.nama_item }}</td>
+                            <td>{{ detail.harga_item }}</td>
+                            <td>{{ detail.pivot.quantity }}</td>
+                            <td>Rp. {{ detail.pivot.jumlah }}</td>
                         </tr>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td style="font-weight: 600;">Total</td>
+                            <td>Rp. {{ jumlahTotal }}</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
@@ -54,17 +61,17 @@ export default {
 
     //props
     props: {
-        details: Array, // <- nama props yang dibuat di controller saat parsing data
+        details: Object, // <- nama props yang dibuat di controller saat parsing data
+        jumlahTotal: Object
     },
 
     //define Composition Api
-    setup() {
+    setup(props) {
+
 
         //method deleteDetail
         function deleteDetail(id) {
-
             Inertia.delete(`/transactions/${id}`)
-
         }
 
         return {
